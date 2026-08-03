@@ -1,0 +1,226 @@
+/* 全局重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 导航栏 */
+.navbar {
+    background: #1a3a6b;
+    color: white;
+    padding: 12px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.navbar h1 {
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.nav-status {
+    font-size: 14px;
+    background: rgba(255,255,255,0.15);
+    padding: 5px 14px;
+    border-radius: 20px;
+}
+
+/* 主容器 */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 30px;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 左面板 */
+.left-panel {
+    flex: 2;
+    min-width: 600px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.upload-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: #eaf1fc;
+    padding: 12px 18px;
+    border-radius: 12px;
+}
+.upload-btn {
+    background: white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid #b3cce6;
+    color: #1a3a6b;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+.upload-btn:hover {
+    background: #d6e4f5;
+    border-color: #1a3a6b;
+}
+.btn {
+    padding: 8px 22px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-primary {
+    background: #1a3a6b;
+    color: white;
+}
+.btn-primary:hover {
+    background: #2c5a9a;
+}
+.btn-secondary {
+    background: #e0ecff;
+    color: #1a3a6b;
+}
+.btn-secondary:hover {
+    background: #c8dbf5;
+}
+.btn-danger {
+    background: #c0392b;
+    color: white;
+}
+.btn-danger:hover {
+    background: #e74c3c;
+}
+#fileCount {
+    font-size: 13px;
+    color: #1a3a6b;
+}
+
+/* 画布 */
+.canvas-wrapper {
+    position: relative;
+    background: #eaf0fa;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d0ddee;
+}
+#imageCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: crosshair;
+}
+.canvas-tip {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 58, 107, 0.8);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.image-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 4px;
+}
+.image-controls span {
+    font-size: 14px;
+    color: #1a3a6b;
+}
+
+/* 右面板 */
+.right-panel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.curve-container, .result-panel {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    padding: 18px 20px;
+}
+.curve-container h3, .result-panel h3 {
+    color: #1a3a6b;
+    font-weight: 400;
+    border-bottom: 1px solid #eef4fa;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+#curveChart {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+}
+.curve-stats {
+    font-size: 13px;
+    color: #2c3e50;
+    margin-top: 8px;
+    background: #f7faff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #1a3a6b;
+}
+.result-panel .hint {
+    color: #7f8c8d;
+    font-style: italic;
+}
+#resultContent {
+    min-height: 100px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+#resultContent .lead-value {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a3a6b;
+}
+#resultContent .grade {
+    font-weight: 500;
+}
+
+/* 底部状态栏 */
+.status-bar {
+    background: #d6e4f5;
+    color: #1a3a6b;
+    padding: 10px 30px;
+    font-size: 14px;
+    border-top: 1px solid #b3cce6;
+    flex-shrink: 0;
+    text-align: center;
+}
